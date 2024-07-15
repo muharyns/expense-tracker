@@ -1,0 +1,3 @@
+.category-chart ul > li.recharts-legend-item > .recharts-surface {
+  display: none !important;
+}
