@@ -16,7 +16,7 @@ function Dashboard() {
   const { user } = useUser();
   const getExpenseList = async () => {
     const ExpensesAll = await axios
-      .get(`/api/expenses`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/expenses`)
       .then((response) => response.data)
       .catch((error) => {
         throw error;
@@ -27,13 +27,13 @@ function Dashboard() {
     (async () => {
       try {
         const monthlyExpenses = await axios
-          .get(`/api/expenses/monthly`)
+          .get(`${process.env.NEXT_PUBLIC_API_URL}/api/expenses/monthly`)
           .then((response) => response.data);
 
         setMonthlyExpense(monthlyExpenses);
 
         const categoryExpensesData = await axios
-          .get(`/api/expenses/category`)
+          .get(`${process.env.NEXT_PUBLIC_API_URL}/api/expenses/category`)
           .then((response) => response.data);
         setCategoryExpenses(categoryExpensesData);
 

@@ -11,7 +11,9 @@ import EditExpense from "./EditExpense";
 function ExpenseListTable({ expensesList, refreshData }) {
   const deleteExpense = async (expense) => {
     try {
-      const response = await axios.delete(`/api/expenses/${expense.id}`);
+      const response = await axios.delete(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/expenses/${expense.id}`
+      );
 
       if (response) {
         refreshData();
