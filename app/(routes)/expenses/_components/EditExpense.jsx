@@ -56,7 +56,7 @@ function EditExpense({ dataEdit, refreshData }) {
 
     try {
       const response = await axios.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/expenses/${newData.id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}api/expenses/${newData.id}`,
         updatedExpense
       );
       if (response) {

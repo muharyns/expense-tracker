@@ -46,13 +46,16 @@ function CreateExpense({ refreshData }) {
 
   const onCreateExpense = async () => {
     try {
-      const response = await axios.post("/api/expenses", {
-        name: newData.name,
-        amount: newData.amount,
-        emojiIcon,
-        category: category?.label,
-        createdAt: newData.createdAt,
-      });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/expenses`,
+        {
+          name: newData.name,
+          amount: newData.amount,
+          emojiIcon,
+          category: category?.label,
+          createdAt: newData.createdAt,
+        }
+      );
 
       if (response) {
         refreshData();
