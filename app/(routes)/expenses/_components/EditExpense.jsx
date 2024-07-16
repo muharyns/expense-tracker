@@ -44,13 +44,11 @@ function EditExpense({ dataEdit, refreshData }) {
   };
 
   const onUpdateExpense = async () => {
-    // console.log("newData.createdAt", newData.createdAt);
-    // return;
     const updatedExpense = {
       name: newData.name,
       amount: newData.amount,
       category: category?.label,
-      createdAt: newData.createdAt,
+      createdAt: changeToDate(newData.createdAt),
       icon: emojiIcon,
     };
 
@@ -72,7 +70,7 @@ function EditExpense({ dataEdit, refreshData }) {
   const handleChange = (e) => {
     setnewData({ ...newData, [e.target.name]: e.target.value });
   };
-
+  console.log("dataEdit.category", dataEdit.category);
   return (
     <div>
       <Dialog>
@@ -148,8 +146,8 @@ function EditExpense({ dataEdit, refreshData }) {
                     onChange={handleCategoryChange}
                     name="category"
                     defaultValue={{
-                      label: newData.category,
-                      value: newData.category,
+                      label: dataEdit.category,
+                      value: dataEdit.category,
                     }}
                     // className="block w-full rounded-md"
                   />

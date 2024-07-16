@@ -15,9 +15,14 @@ function CardInfo({ expenseList, monthlyExpense }) {
   ).padStart(2, "0")}`;
 
   // Filter the data for the current month
-  const currentMonthData = monthlyExpense.data.filter(
-    (item) => item.month === currentMonth
-  );
+  const currentMonthData = monthlyExpense.data.filter((item) => {
+    const itemMonth = item.month.substring(0, 7); // Extract 'YYYY-MM' from 'YYYY-MM-DD'
+    return itemMonth === currentMonth;
+  });
+
+  // const currentMonthData = monthlyExpense.data.filter(
+  //   (item) => item.month === currentMonth
+  // );
 
   // Sum the totalAmount for the current month
   const totalAmountThisMonth = currentMonthData.reduce(
