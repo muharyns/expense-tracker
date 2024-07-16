@@ -1,10 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### [Live demo](https://budget-tracker-sayyidisal.vercel.app/)
+### [Live demo](https://expense-tracker-gamma-black.vercel.app/dashboard)
 
 ## Getting Started
 
 #### Install dependencies
+
 ```
 npm install
 ```
@@ -53,7 +54,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [Recharts](https://recharts.org/)
 - [Vercel](https://vercel.com/)
 
-## 🔧 .env.local file 
+## 🔧 .env.local file
 
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=

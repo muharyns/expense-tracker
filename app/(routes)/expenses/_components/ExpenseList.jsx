@@ -15,7 +15,7 @@ function ExpenseList() {
 
   const getExpenseList = async () => {
     const ExpensesAll = await axios
-      .get(`${process.env.NEXT_PUBLIC_API_URL}api/expenses`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/api/expenses`)
       .then((response) => response.data)
       .catch((error) => {
         throw error;
